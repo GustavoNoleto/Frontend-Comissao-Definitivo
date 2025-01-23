@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     if (token && username) {
         try {
-            const response = await axios.get(`https://192.168.0.55:5000/4Shark/Detalhado/${username}`, {
+            const response = await axios.get(`https://backend-comissao.onrender.com/4Shark/Detalhado2/${username}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
