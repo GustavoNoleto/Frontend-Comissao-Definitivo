@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     if (token && username) {
         try {
-            const response = await axios.get(`https://10.10.1.142:5000/4Shark/Detalhado/${username}`, {
+            const response = await axios.get(`https://192.168.0.55:5000/4Shark/Detalhado/${username}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -34,11 +34,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const linha = document.createElement('tr');
 
                 linha.innerHTML = `
-                    <td>${dado.Nr_OS}</td>
                     <td>${new Date(dado.Dt_Emissao).toLocaleDateString()}</td>
                     <td>${dado.Tecnico}</td>
                     <td>${dado.Descrição}</td>
-                    <td>R$ ${dado.valor_unitario.toFixed(2)}</td>
+                    <td>R$ ${dado.valor_unitario}</td>
                 `;
 
                 tabela.appendChild(linha);
